@@ -27,7 +27,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <p>Wecome to next.js 15 crush course</p>
         {children}
+        <footer className="flex justify-center items-center p-4 bg-gray-100 dark:bg-gray-800">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            © 2023 Next.js Crash Course
+          </p>
+        </footer>
       </body>
     </html>
   );
