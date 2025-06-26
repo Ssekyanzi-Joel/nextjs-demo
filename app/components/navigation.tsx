@@ -3,6 +3,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {SignInButton,UserButton,SignedIn,SignedOut } from "@clerk/nextjs";
 
 const Navigation: FC = () => {
     const pathname = usePathname();
@@ -46,7 +47,22 @@ const Navigation: FC = () => {
                     }
                 >
                     About
-                </Link>
+                  </Link>
+                  <SignedOut> 
+                  <SignInButton mode="modal"></SignInButton>
+                  </SignedOut>
+
+                  <SignedIn>
+                  <UserButton
+                    afterSignOutUrl="/"
+                    appearance={{
+                        elements: {
+                            userButtonAvatarBox: "w-8 h-8",
+                            userButtonAvatar: "w-8 h-8 rounded-full",
+                        },
+                    }}
+                      ></UserButton>
+                    </SignedIn>
             </li>
         </ul>
     </nav>
